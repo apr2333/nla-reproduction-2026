@@ -14,7 +14,7 @@ A Natural Language Autoencoder (NLA) is a pair of language-model components mapp
 FVE = 1 − E‖h_l − ĥ_l‖² / E‖h_l − h̄_l‖²
 ```
 
-Anthropic report FVE 0.6–0.8 on Claude-class models after joint reinforcement-learning training, and release four trained checkpoint pairs under [`kitft/nla-models`](https://huggingface.co/collections/kitft/nla-models). This work reproduces the round-trip evaluation on the smallest of those checkpoints, `Qwen/Qwen2.5-7B-Instruct` at layer 20. On 191 held-out positions of WikiText-103, the pipeline reaches FVE = 0.6437 (mean cosine = 0.64), within 0.11 of the paper's 0.75 figure on the same model with a fully RL-trained AV.
+Anthropic report FVE 0.6–0.8 on Claude-class models after joint reinforcement-learning training, and release four trained checkpoint pairs on Hugging Face under user `kitft`. This work reproduces the round-trip evaluation on the smallest of those checkpoints, `Qwen/Qwen2.5-7B-Instruct` at layer 20. On 191 held-out positions of WikiText-103, the pipeline reaches FVE = 0.6437 (mean cosine = 0.64), within 0.11 of the paper's 0.75 figure on the same model with a fully RL-trained AV.
 
 The rest of this README is organized as follows: 
 **Section 2** documents the choice of target model. 
