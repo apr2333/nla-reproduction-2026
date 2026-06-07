@@ -1,0 +1,11 @@
+torch>=2.4
+transformers>=4.40
+bitsandbytes>=0.46.1
+safetensors>=0.4.3
+huggingface_hub>=0.25
+datasets>=2.18
+pyyaml>=6.0
+numpy>=1.26
+tqdm>=4.66
+requests>=2.31
+matplotlib>=3.8

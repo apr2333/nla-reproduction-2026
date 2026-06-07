@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+
+# Virtual envs
+venv/
+env/
+.env
+.venv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large model files / data — host on HF Hub or Drive, not in repo
+*.safetensors
+*.bin
+*.pt
+*.parquet
+data/nla_critic_qwen7b/
+data/qwen7b_layer20_4bit_n200.pt
+data/qwen7b_paper_zs_n200.pt
+data/qwen7b_path_x_fve_n200.pt
+data/raw_activations/
+data/intermediate/
+
+# Anthropic API key
+.env*
+*api_key*
+secrets/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Logs / runs
+*.log
+runs/
+wandb/

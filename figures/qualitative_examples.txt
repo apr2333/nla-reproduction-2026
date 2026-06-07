@@ -1,0 +1,226 @@
+================================================================================
+Path X qualitative examples — Qwen-7B layer 20 + released NLA Critic
+N = 191 positions evaluated. mean cos = 0.6437, FVE = 0.6437
+================================================================================
+
+================================================================================
+  HIGH-cosine examples (cosine 0.7+) — Critic recovered z well
+================================================================================
+
+--- Example 1 (val_idx=68) ---
+cosine = 0.9059, MSE = 0.1883
+
+PREFIX (60 tokens given to Claude):
+   The Pre @-@ Raphaelites were a strong , lifelong influence on Barker . She once indicated , " I am to some extent influenced by them — not in any technical sense , but in the choice of subject matter and the feeling and atmosphere they could achieve . " She admitted a fondness for the early
+
+CLAUDE z (paper-format <analysis> features):
+  Artistic influence and aesthetic philosophy: Barker has established her debt to Pre-Raphaelite movement, specifically their subject matter choices and atmospheric qualities rather than technical methods.
+
+Incomplete comparative structure: "fondness for the early" signals an incomplete thought requiring completion—likely naming a specific Pre-Raphaelite artist, period, or work that exemplifies her stated preferences.
+
+Final token "early" as adjective requiring noun: Must be followed by a noun phrase identifying what early period/artist/work she admired, maintaining the sentence's grammatical co...
+
+--- Example 2 (val_idx=50) ---
+cosine = 0.8684, MSE = 0.2631
+
+PREFIX (60 tokens given to Claude):
+   Cicely Mary Barker ( 28 June 1895 – 16 February 1973 ) was an English illustrator best known for a series of fantasy illustrations depicting fairies and flowers . Barker 's art education began in girlhood with correspondence courses and instruction at the Croy
+
+CLAUDE z (paper-format <analysis> features):
+  Biographical chronology and structure: Birth/death dates established (1895–1973), profession and primary work identified; now expects educational details, career progression, or contextual information about her artistic development.
+
+Sentence completion with specific institutional reference: "instruction at the Croy" is an incomplete proper noun (likely "Croydon" or similar art school); the model must complete this place name and continue the educational narrative.
+
+Final token "Croy" is mid-word within a prepositional phrase; next tokens must complete the institution name, then continue descr...
+
+--- Example 3 (val_idx=107) ---
+cosine = 0.8555, MSE = 0.2890
+
+PREFIX (60 tokens given to Claude):
+   The first stage of building of the tower , as recorded by Leo XIII in his motu proprio Ut mysticam of 1891 , is credited to Pope Gregory XIII , Pope from 1572 to 1585 . The directive was to build a tower at a suitable
+
+CLAUDE z (paper-format <analysis> features):
+  Architectural/historical documentation pattern: text establishes papal authority and dates for construction projects, expects continuation of location/purpose details for the tower being built.
+
+Incomplete prepositional phrase: "at a suitable" requires a noun or noun phrase to complete the thought (e.g., "location," "site," "vantage point").
+
+Final token "suitable" is an adjective modifying an implied noun; must be followed by a noun or noun phrase specifying where the tower should be built, maintaining the formal historical register established throughout.
+
+--- Example 4 (val_idx=78) ---
+cosine = 0.8436, MSE = 0.3128
+
+PREFIX (60 tokens given to Claude):
+   Benthic in nature , the plain maskray feeds mainly on caridean shrimp and polychaete worms , and to a lesser extent on small bony fishes . It is viviparous , with females producing litters of one or two young that are nourished during gestation via hist
+
+CLAUDE z (paper-format <analysis> features):
+  Biological description momentum: The text establishes a taxonomic/natural history pattern describing the maskray's feeding habits and reproductive mode, with supporting details expected to continue.
+
+Incomplete technical term: "hist" is the truncated beginning of a biological term (histotrophy/histolysis) describing nutrient transfer mechanism during viviparity—the model must complete this specialized vocabulary.
+
+Final token constraint: "hist" is mid-word within a prepositional phrase ("nourished during gestation via hist[otrophy]"), requiring completion of the technical term and continuation...
+
+--- Example 5 (val_idx=187) ---
+cosine = 0.8426, MSE = 0.3148
+
+PREFIX (60 tokens given to Claude):
+   The first written evidence of deities in Egypt comes from the Early Dynastic Period ( c . 3100 – 2686 BC ) . Deities must have emerged sometime in the preceding Predynastic Period ( before 3100 BC ) and grown out of prehistoric
+
+CLAUDE z (paper-format <analysis> features):
+  Incomplete comparative structure: "grown out of prehistoric" requires completion—likely "prehistoric beliefs," "prehistoric religion," or "prehistoric practices" to parallel the sentence's causal explanation pattern.
+
+Historical/archaeological register: Formal academic tone with chronological framing (Early Dynastic, Predynastic periods) expects continuation maintaining scholarly precision and temporal coherence.
+
+Final token "prehistoric" is an adjective requiring a noun object to complete the prepositional phrase "grown out of prehistoric [X]"—must be a noun phrase describing the origin sour...
+
+================================================================================
+  MEDIUM-cosine examples (around median 0.652)
+================================================================================
+
+--- Example 1 (val_idx=44) ---
+cosine = 0.6509, MSE = 0.6982
+
+PREFIX (60 tokens given to Claude):
+   In the 1880s , the federal government began closing many small arsenals around the country in favor of smaller ones built near railroads for quick deployment . The arsenal commander received word from Washington that the Little Rock site must be abandoned " not later than October 1 , 189
+
+CLAUDE z (paper-format <analysis> features):
+  Temporal/numerical completion: The year "189" is incomplete and must be finished with a single digit (0-9), with "1890" being the most contextually appropriate given the 1880s timeframe and the "not later than" phrasing suggesting imminent deadline.
+
+Syntactic constraint: The quoted phrase "not later than October 1, 189_" requires closure with a closing quotation mark after the date is completed, maintaining the direct speech structure.
+
+Final token constraint: The incomplete year "189" ends mid-number within a quoted deadline. The model must complete the digit to form a valid year, then conti...
+
+--- Example 2 (val_idx=9) ---
+cosine = 0.6509, MSE = 0.6982
+
+PREFIX (60 tokens given to Claude):
+   Concept work for Valkyria Chronicles III began after development finished on Valkyria Chronicles II in early 2010 , with full development beginning shortly after this . The director of Valkyria Chronicles II , Takeshi Ozawa , returned to that role for Valkyria Chronicles III . Development work
+
+CLAUDE z (paper-format <analysis> features):
+  Biographical/project continuity pattern: Establishing key personnel (Takeshi Ozawa as director) and timeline progression from VC II completion through VC III development phases.
+
+Sentence structure momentum: "Development work" is an incomplete predicate phrase requiring a verb and object to complete the clause—likely describing what the development team accomplished or focused on.
+
+Final token constraint: "work" is a noun functioning as the subject of an incomplete predicate; next tokens must supply an action verb (e.g., "began," "focused," "proceeded") to form a grammatically complete sentenc...
+
+--- Example 3 (val_idx=83) ---
+cosine = 0.6520, MSE = 0.6960
+
+PREFIX (60 tokens given to Claude):
+   The plain maskray inhabits the continental shelf of northern Australia from the Wellesley Islands in Queensland to the Bonaparte Archipelago in Western Australia , including the Gulf of Carpentaria and the Timor and Arafura Seas . There are unsubstantiated reports that its range extends to southern
+
+CLAUDE z (paper-format <analysis> features):
+  Geographic range enumeration pattern: The text lists multiple locations (Wellesley Islands, Bonaparte Archipelago, Gulf of Carpentaria, Timor and Arafura Seas) establishing a systematic geographic description that expects continuation with additional locations or directional boundaries.
+
+Incomplete directional phrase: "extends to southern" is syntactically incomplete—requires a geographic location (e.g., "southern Australia," "southern Queensland") to complete the prepositional phrase and maintain grammatical coherence.
+
+Final token constraint: "southern" is an adjective mid-phrase requiring i...
+
+--- Example 4 (val_idx=90) ---
+cosine = 0.6557, MSE = 0.6886
+
+PREFIX (60 tokens given to Claude):
+   In the off @-@ season the Blue Jackets ' approach to building their team changed , moving from a team of young developing players into one with established players . The first deal General Manager Scott Howson made was the acquisition of All @-@ Star forward Jeff Carter on June 23 , 2
+
+CLAUDE z (paper-format <analysis> features):
+  Temporal/numerical completion: Year 2 is incomplete (2 followed by space), requiring a 3-digit year completion, likely 2011 based on Jeff Carter's actual trade date.
+
+Narrative momentum: Sentence establishes a specific trade event with date and player; the year completion closes this clause, then likely continues with trade details (what was given up, team context, or next transaction).
+
+Final token constraint: The digit "2" is mid-year, requiring two more digits to form a valid year; next tokens must complete the date before the sentence can progress to consequences or subsequent events.
+
+--- Example 5 (val_idx=62) ---
+cosine = 0.6558, MSE = 0.6884
+
+PREFIX (60 tokens given to Claude):
+   Barker continued to attend evening classes at the Croydon Art School between the 1920s and the 1940s , eventually receiving a teaching position . She took sketching trips to Amberley and Storrington in Sussex and to Cornwall and the southern coast with family and friends
+
+CLAUDE z (paper-format <analysis> features):
+  Biographical narrative momentum: establishing Barker's artistic development through chronological progression of education, employment, and creative activities.
+
+Continuation of travel/location pattern: series of sketching destinations (Amberley, Storrington, Cornwall, southern coast) suggests more locations or shift to describing outcomes of these trips.
+
+Final token "friends" completes a prepositional phrase listing companions; expects either period/sentence end or conjunction introducing new clause about these trips' significance or artistic results.
+
+================================================================================
+  LOW-cosine examples (cosine < 0.5) — Critic struggled
+================================================================================
+
+--- Example 1 (val_idx=149) ---
+cosine = 0.3382, MSE = 1.3237
+
+PREFIX (60 tokens given to Claude):
+   In addition to acting in films , Fernandez has supported charitable organisations and a number of causes . In 2011 , on the behalf of People for the Ethical Treatment of Animals ( PETA ) , she sent a letter to the Mumbai Municipal Commissioner asking for an end to horse @-@ drawn
+
+CLAUDE z (paper-format <analysis> features):
+  Formal biographical register with encyclopedic tone, listing accomplishments and advocacy work in structured chronological format.
+
+Incomplete compound noun phrase: "horse @-@ drawn" requires a noun completion (carriage, cart, vehicle) to form a grammatical object for the preposition "to."
+
+Final token "@-@" is a hyphenation marker indicating word-boundary continuation; next tokens must complete the hyphenated word or provide the noun phrase object that "horse-drawn [X]" modifies.
+
+--- Example 2 (val_idx=100) ---
+cosine = 0.3435, MSE = 1.3130
+
+PREFIX (60 tokens given to Claude):
+   Finishing with the worst record in the NHL , Columbus had the best chance of receiving the first overall pick in the 2012 draft . With the NHL 's weighted draft lottery the Blue Jackets had a 48 @.@ 2 % chance of drafting first overall . However , the lottery
+
+CLAUDE z (paper-format <analysis> features):
+  Narrative momentum: setup-and-reversal pattern established—Columbus positioned as favorites for first pick, then "However" signals an unexpected outcome is coming.
+
+Lottery mechanics context: the text has introduced specific probability (48.2%) and the weighted lottery system, so next tokens should reveal the actual lottery result or its consequences.
+
+Final token "lottery": noun ending a dependent clause after "However," requiring completion of the reversal—what actually happened in the lottery draw, likely introducing a different team or outcome.
+
+--- Example 3 (val_idx=86) ---
+cosine = 0.3473, MSE = 1.3054
+
+PREFIX (60 tokens given to Claude):
+   The main conservation threat to the plain maskray is incidental capture by commercial bottom trawl fisheries . In the present day , this is mostly caused by Australia 's Northern Prawn Fishery , which operates throughout its range . Although this species is discarded when caught , it is more delicate @-@ bodied
+
+CLAUDE z (paper-format <analysis> features):
+  Syntactic constraint: unclosed comparative structure initiated by "more delicate" requires completion with "than [comparison]" to form grammatical adjective phrase.
+
+Domain/genre pattern: scientific species description following taxonomic/ecological documentation format, establishing factual, technical register with passive voice and specific geographic/operational details.
+
+Final token "@-@" is a hyphenation marker mid-word ("delicate-bodied"), requiring continuation of the compound adjective and completion of the comparative statement about the maskray's vulnerability to trawling.
+
+--- Example 4 (val_idx=122) ---
+cosine = 0.3535, MSE = 1.2931
+
+PREFIX (60 tokens given to Claude):
+   Fingal was designed and built as a merchantman by J & G Thomson 's Clyde Bank Iron Shipyard at Govan in Glasgow , Scotland , and was completed early in 1861 . She was described by Midshipman Dabney Scales , who served on the Atlanta before
+
+CLAUDE z (paper-format <analysis> features):
+  Narrative momentum: biographical/historical account of a ship establishing context before introducing a key witness's perspective on the vessel.
+
+Comparative structure: "before" signals an imminent contrast or temporal shift—the model expects either a different time period, location, or contrasting experience to follow.
+
+Final token constraint: "before" is a preposition requiring a temporal or comparative object (e.g., "before the war," "before joining," "before her conversion"). The next tokens must complete this prepositional phrase with a time reference or event.
+
+--- Example 5 (val_idx=47) ---
+cosine = 0.3699, MSE = 1.2602
+
+PREFIX (60 tokens given to Claude):
+   The building and the surrounding park were used for many public purposes throughout the early 20th century . The Tower Building served as headquarters for the United Confederate Veterans Reunion , May 15 – 18 , 1911 . Over 106 @,@ 000
+
+CLAUDE z (paper-format <analysis> features):
+  Numeric sequence completion: "Over 106 @,@" signals a large number being formatted with commas; the model must predict the next digit(s) to complete a plausible attendance figure (likely "000" to form "106,000").
+
+Historical documentation pattern: The text follows a chronological, factual register documenting early 20th-century events with specific dates and organizations; continuation should maintain this documentary tone with related historical details.
+
+Final token constraint: The "@,@" represents a comma placeholder in a number; the next token must be a digit or digits that complete a real...
+
+================================================================================
+PATTERN OBSERVATION (N=191)
+================================================================================
+
+HIGH-cosine z's tend to name CONCRETE syntactic-semantic constraints at the
+final token: 'Final token X ends noun phrase describing Y', 'preposition expects
+Z continuation'. They are mid-sentence, fine-grained predictions.
+
+LOW-cosine z's tend to float at PARAGRAPH-summary level: 'parallel structure
+momentum', 'enumeration incompleteness'. They describe text-level patterns
+rather than the residual-stream state at the specific token.
+
+This suggests the NLA Critic captures token-resolution semantic constraints
+better than discourse-level pattern descriptions.
