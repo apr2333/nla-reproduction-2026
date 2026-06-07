@@ -215,9 +215,5 @@ Final token constraint: The "@,@" represents a comma placeholder in a number; th
 PATTERN OBSERVATION (N = 191)
 ================================================================================
 
-Pattern across the 15 examples above: high-cosine z's name a specific
-constraint at the final token (the part-of-speech, the syntactic role,
-or the missing noun-phrase argument). Lower-cosine z's stop at a
-paragraph-level pattern description (parallel structure, enumeration,
-narrative momentum) without anchoring to the final token. The Critic's
-reconstruction quality appears to track how token-specific the z is.
+Pattern across the 15 examples above: high-cosine z's name a specific constraint at the final token (the part-of-speech, the syntactic role, or the missing noun-phrase argument). Lower-cosine z's stop at a paragraph-level pattern description (parallel structure, enumeration,
+narrative momentum) without anchoring to the final token. The Critic's reconstruction quality appears to track how token-specific the z is.
