@@ -1,10 +1,11 @@
 ================================================================================
-Path X qualitative examples — Qwen-7B layer 20 + released NLA Critic
-N = 191 positions evaluated. mean cos = 0.6437, FVE = 0.6437
+Qualitative examples from the round-trip evaluation
+Qwen-7B layer 20 + released NLA Critic
+N = 191 positions. Mean cosine = 0.6437. FVE = 0.6437.
 ================================================================================
 
 ================================================================================
-  HIGH-cosine examples (cosine 0.7+) — Critic recovered z well
+  HIGH cosine (top 5 of 191; cosine 0.84–0.91)
 ================================================================================
 
 --- Example 1 (val_idx=68) ---
@@ -73,7 +74,7 @@ Historical/archaeological register: Formal academic tone with chronological fram
 Final token "prehistoric" is an adjective requiring a noun object to complete the prepositional phrase "grown out of prehistoric [X]"—must be a noun phrase describing the origin sour...
 
 ================================================================================
-  MEDIUM-cosine examples (around median 0.652)
+  MEDIUM cosine (around the median; cosine 0.65–0.66)
 ================================================================================
 
 --- Example 1 (val_idx=44) ---
@@ -142,7 +143,7 @@ Continuation of travel/location pattern: series of sketching destinations (Amber
 Final token "friends" completes a prepositional phrase listing companions; expects either period/sentence end or conjunction introducing new clause about these trips' significance or artistic results.
 
 ================================================================================
-  LOW-cosine examples (cosine < 0.5) — Critic struggled
+  LOW cosine (bottom 5 of 191; cosine 0.34–0.37)
 ================================================================================
 
 --- Example 1 (val_idx=149) ---
@@ -211,16 +212,12 @@ Historical documentation pattern: The text follows a chronological, factual regi
 Final token constraint: The "@,@" represents a comma placeholder in a number; the next token must be a digit or digits that complete a real...
 
 ================================================================================
-PATTERN OBSERVATION (N=191)
+PATTERN OBSERVATION (N = 191)
 ================================================================================
 
-HIGH-cosine z's tend to name CONCRETE syntactic-semantic constraints at the
-final token: 'Final token X ends noun phrase describing Y', 'preposition expects
-Z continuation'. They are mid-sentence, fine-grained predictions.
-
-LOW-cosine z's tend to float at PARAGRAPH-summary level: 'parallel structure
-momentum', 'enumeration incompleteness'. They describe text-level patterns
-rather than the residual-stream state at the specific token.
-
-This suggests the NLA Critic captures token-resolution semantic constraints
-better than discourse-level pattern descriptions.
+Pattern across the 15 examples above: high-cosine z's name a specific
+constraint at the final token (the part-of-speech, the syntactic role,
+or the missing noun-phrase argument). Lower-cosine z's stop at a
+paragraph-level pattern description (parallel structure, enumeration,
+narrative momentum) without anchoring to the final token. The Critic's
+reconstruction quality appears to track how token-specific the z is.
